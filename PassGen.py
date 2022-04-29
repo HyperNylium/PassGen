@@ -2,12 +2,13 @@
 import time
 import platform
 import os
+import requests
 from tqdm import tqdm
 import random
 
 
-__App_Version__ = '2.0'
-__App_Name__ = 'PassGen'
+App_Version = "2.5"
+App_Name = "PassGen"
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 ###
@@ -67,12 +68,16 @@ amount = 50
 
 for x in range(amount):
 
- def LoadingSequence():
+ def WellcomeScreen():
+    os.system(clear_command)
+    print(CLR_CYAN + "\n\n            Welcome To PassGen" + RESET_ALL)
+    input(CLR_GREEN + "\n    Press 'Enter' to start generating a password" + RESET_ALL)
+    LoadingSequence()
 
+ def LoadingSequence():
     os.system(clear_command)
-    for i in tqdm(range(100), unit="KB", position=2, desc=" Getting Ready To Generate"):
+    for i in tqdm(range(0, 100), ncols = 100, position=2, unit="KB", desc =" Getting PassGen Ready"):
         time.sleep(0.04)
-    os.system(clear_command)
     passgen()
 
  def passgen():
@@ -101,7 +106,6 @@ for x in range(amount):
     print(CLR_CYAN + "\n     Suggested" + CLR_YELLOW + " Tiktok "+ RESET_ALL + "Password:    " + password4)
     print(CLR_CYAN + "\n     Suggested" + CLR_YELLOW + " Github "+ RESET_ALL + "Password:    " + password5)
     print(CLR_CYAN + "\n     Suggested" + CLR_YELLOW + " Youtube "+ RESET_ALL + "Password:    " + password6)
-    RESET_ALL
 
     print(CLR_YELLOW + "\n    ============ Other Suggested Passwords ============    \n" + RESET_ALL)
     print(CLR_CYAN + "     Suggested Password:     " + RESET_ALL + password7)
@@ -115,8 +119,8 @@ for x in range(amount):
     print(CLR_CYAN + "     Suggested Password:     " + RESET_ALL + password15)
     RESET_ALL
 
-    print(CLR_CYAN + "\n     press 'q' to quit the app")
-    print(CLR_CYAN + "     press 'r' to generate new passwords")
+    print(CLR_CYAN + "\n     press 'q' to quit the app" + RESET_ALL)
+    print(CLR_CYAN + "     press 'r' to generate new passwords" + RESET_ALL)
 
     input_ = input("\n====> ")
 
@@ -142,9 +146,4 @@ for x in range(amount):
         os.system(clear_command)
         exit()
 
-os.system(clear_command)
-print(CLR_CYAN + "\n\n            Welcome To PassGen")
-RESET_ALL
-input(CLR_GREEN + "\n    Press 'Enter' to start generating a password")
-RESET_ALL
-LoadingSequence()
+WellcomeScreen()
