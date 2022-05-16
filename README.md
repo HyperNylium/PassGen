@@ -4,7 +4,7 @@
 
 - Easy to use
 
-- A updater program* that i wrote so you don't even need to open your web browser
+- A updater program* that i wrote so you don't even need to open your web browser to get an update
 
 - And more updates on there way!!
 
